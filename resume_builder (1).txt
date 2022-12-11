@@ -1,0 +1,108 @@
+Fraction.java:
+-------------
+//will show years worked/age as a fraction
+public class Fraction
+{
+    private int numerator;
+    private int denominator;
+    
+    public Fraction(int numer, int denom)
+    {
+        numerator = numer;
+        denominator = denom;
+    }
+    
+   
+    public int getNumerator()
+    {
+        return numerator;
+    }
+    
+   
+    public int getDenominator()
+    {
+        return denominator;
+    }
+    
+    public String toString()
+    {
+        return "You have been working " + numerator +"/"+ denominator + " years of your life" ;
+    }
+    
+    
+}
+
+Resume.java:
+-----------
+public class Resume {
+
+    private String name;
+
+    public Resume (String yourName){
+        name = yourName;
+    }
+
+    public void greeting(){
+        System.out.print("Name: ");
+        System.out.print(name.toUpperCase());
+        
+    }
+
+    public void currentEmployment(String yourEmployment){
+        System.out.print("Current place of work: ");
+        System.out.print(yourEmployment);
+    }
+    public void yourAdjective(String character){
+        System.out.print("You are ");
+        System.out.print(character);
+    }
+}
+
+ResumeBuilder.java:
+------------------
+//import scanner for user input
+import java.util.Scanner;
+
+public class ResumeBuilder
+{
+    public static void main(String[] args) {
+
+       
+       Scanner input = new Scanner(System.in);
+       
+       System.out.println("Enter your name: ");
+       String userName = input.nextLine();
+       Resume program1 = new Resume(userName);
+       program1.greeting();
+       System.out.println();
+       
+       System.out.println("Where are you currently employed? ");
+       String employment = input.nextLine();
+       program1.currentEmployment(employment);
+       System.out.println();
+       
+       System.out.println("How many years have you been working? ");
+       int numerator = input.nextInt();
+       System.out.println("How old are you? ");
+       int denominator = input.nextInt();
+        
+       Fraction frac1 = new Fraction(numerator, denominator);
+       frac1.getNumerator();
+       frac1.getDenominator();
+       System.out.println(frac1.toString());
+       
+       String[] stringArr = {"cool", "epic", "lame", "swag"};
+        
+        System.out.println(stringArr[0]);
+        System.out.println(stringArr[1]);
+        System.out.println(stringArr[2]);
+        System.out.println(stringArr[3]);
+        
+       System.out.println("Describe yourself in 1 word from above");
+       String adjective = input.nextLine();
+       program1.yourAdjective(adjective);
+       System.out.println();
+       
+    }
+}
+
